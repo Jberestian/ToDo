@@ -16,7 +16,7 @@
 }
 
 .todoListMain .header button:hover {
-    background-color: #48ff4c;
+    background-color: #e673ff;
     border: 2px solid #fff;
     cursor: pointer;
 }
