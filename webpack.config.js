@@ -43,7 +43,7 @@ module.exports = {
             {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
-                use: ['babel-loader'],
+                loader: 'babel-loader',
                 options: {
                     plugins: [
                         ['import', { libraryName: "antd", style: true }]
