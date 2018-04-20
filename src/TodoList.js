@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import TodoItems from "./TodoItems"
-
+import './index';
 import "./TodoList.css"
 
 class TodoList extends Component{
@@ -52,10 +52,16 @@ class TodoList extends Component{
               <div className="header">
                     <form onSubmit={this.addItem}>
                         <input ref={(a) => this._inputElement = a}
-                                placeholder="enter task">
+                                placeholder="enter task"
+                               value={this.props.changeList}
+                                onChange={(event)=>
+                                    dispatch(changeList(event.target.value))
+                                }
+                        >
                             </input>
                                 <button type="submit">create</button>
                     </form>
+
               </div>
               <TodoItems entries={this.state.items}
                          delete={this.deleteItem}/>
