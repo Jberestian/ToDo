@@ -1,7 +1,28 @@
 import React, { Component } from 'react';
 import TodoItems from "./TodoItems"
 import './index';
-import "./TodoList.css"
+// import "./TodoList.css"
+import styled from 'styled-components';
+import MainStyle from './component/Main_style'
+
+
+
+function saveTodo() {
+    var str = JSON.stringify(TodoList);
+    localStorage.setItem("", str);
+}
+
+function getTodo() {
+    var str = localStorage.getItem("TodoList");
+    TodoList = JSON.parse(str);
+    if (!TodoList){
+        TodoList= [];
+    }
+}
+
+getTodo();
+saveTodo();
+
 
 class TodoList extends Component{
     constructor(props){
@@ -26,6 +47,7 @@ class TodoList extends Component{
             this.setState((prevState) => {
                 return {
                     items: prevState.items.concat(newItem)
+
                 };
             });
         }
@@ -40,6 +62,7 @@ class TodoList extends Component{
     deleteItem(key) {
         var filteredItems = this.state.items.filter(function (item) {
             return(item.key !== key)
+
         });
 
         this.setState({

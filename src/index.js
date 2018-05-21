@@ -7,6 +7,8 @@ import { connect } from 'react-redux';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import Actions from './component/actions/Actions'
+import styled from 'styled-components';
+
 
 const initialState = {
     task: ''
