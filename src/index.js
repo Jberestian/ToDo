@@ -8,6 +8,7 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import Actions from './component/actions/Actions'
 import styled from 'styled-components';
+import Button from "./component/Button";
 
 
 const initialState = {
@@ -47,6 +48,7 @@ ReactDOM.render(
     <Provider store={store}>
         <BrowserRouter>
         <div>
+            <Button/>
             <nav>
                 <ul>
                     <li><Link to='/date'>Date</Link></li>
